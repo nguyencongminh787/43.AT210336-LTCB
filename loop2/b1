@@ -1,0 +1,10 @@
+#include <stdio.h>
+int main(){
+    int  sum = 0;
+    int numbers[10];
+    for(int i = 0; i <= 10 ; i ++){
+scanf("%d", &numbers[i]);
+    sum += numbers[i];
+}
+printf("tổng của 10 số là : %d\n", sum);
+}
