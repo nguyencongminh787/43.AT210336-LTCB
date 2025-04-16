@@ -1,0 +1,26 @@
+#include<stdio.h>
+void maxmin(int *max, int *arr,int size,int *min){
+    *max=*min=*arr;
+    for(int i = 1; i<size;i++){
+        if(*(arr + i)>*max){
+            *max = *(arr + i);
+        }if(*(arr+i)<*min){
+            *min = *(arr + i);
+        }
+    }
+}
+int main(){
+    int x;
+    printf("nhập số phần tử của mảng : ");
+    scanf("%d",&x);
+    int arr[x];
+    for(int i = 0; i<x;i++){
+        scanf("%d",&arr[i]);
+    }
+    int max,min;
+    int size = sizeof(arr)/sizeof(arr[0]);
+    maxmin(&max,arr,size,&min);
+    printf("giá trị lớn nhất của mảng là : %d\n", max);
+    printf("giá trị nhỏ nhất của mảng là : %d\n", min);
+    return 0;
+}
