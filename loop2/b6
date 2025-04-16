@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+int datgay(int a, int b){
+    while(b != 0){
+        int temp = b;
+        b = a %b;
+        a = temp ;
+    }
+    return a;
+}
+int meosimmy(int a ,int b){
+    return(a *b)/ datgay(a,b);
+    
+}
+int main(){
+    int a,b;
+   
+    printf("nhap 2 so ngau nhien: ");
+    scanf("%d %d", &a,&b);
+    int x = datgay(a,b);
+    int y = meosimmy(a,b);
+    printf("ước chung lớn nhất là : %d\n", x);
+    printf("boi chung nho nhat la: %d\n",y);
+    
+}
