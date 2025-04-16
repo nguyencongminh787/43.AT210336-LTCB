@@ -1,0 +1,41 @@
+#include<stdio.h>
+void swap(int *a, int *b){
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+ int chonpivot(int *arr, int start, int end){
+     int pivot = *(arr + end);
+     int i = start - 1;
+     for(int k = start; k < end; k++){
+         if( *(arr + k)< pivot){
+             i++;
+             swap((arr +i),(arr+k));
+         }
+     }
+     swap((arr + i +1),(arr+end));
+     return i + 1;
+ }
+ void dequy(int *arr, int start, int end){
+     if(start< end){
+         int vitripivot = chonpivot(arr,start,end);
+         dequy(arr,start,vitripivot - 1);
+         dequy(arr,vitripivot + 1,end );
+     }
+ }
+ int main(){
+     int x;
+     printf("nhập số phần tử của mảng :");
+     scanf("%d",&x);
+     int arr[x];
+     printf("các giá trị của mảng là :\n");
+     for(int i = 0 ; i<x;i++){
+         scanf("%d", &arr[i]);
+     }
+     printf("mảng sau khi sắp xếp tăng dần là : \n");
+     dequy(arr,0,x-1);
+     for(int j = 0 ; j<x-1;j++){
+         printf("%d ", arr[j]);
+     }
+     return 0;
+ }
