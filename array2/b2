@@ -1,0 +1,33 @@
+#include<stdio.h>
+int main(){
+    int col,row;
+    printf("nhập số hàng :");
+    scanf("%d",&row);
+    printf("nhập số cột :");
+    scanf("%d",&col);
+    int ma1[row][col], ma2[row][col], sum[row][col];
+    printf("nhập ma trận 1\n");
+    for(int i = 0 ;i<row;i++){
+        for(int j = 0;j<col;j++){
+            printf("\n");
+            printf("nhập dữ liệu ma trân 1 [%d][%d]: " ,i,j);
+            scanf("%d", &ma1[i][j]);
+            
+        }
+    }
+    printf("nhập ma trận 2\n");
+    for(int i = 0;i<row;i++){
+        for(int j = 0 ; j<col;j++){
+            printf("\n");
+            printf("nhập dữ liệu ma trận 2 [%d][%d]: ", i,j);
+            scanf("%d", &ma2[i][j]);
+        }
+    } printf("ma trận tổng là :\n ");
+    for(int i = 0; i<row;i++){
+        for(int j = 0; j<col;j++){
+            sum[i][j] = ma1[i][j] + ma2[i][j];
+            printf("%d ", sum[i][j]);}
+            printf("\n");
+        
+    }
+}
